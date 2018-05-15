@@ -15,7 +15,7 @@
 					</div>
 				</div>
 				<div class="grid-3">
-					<button class="icn btn btn-circle btn-primary-color" onclick="opPostPopup('open', 'menu-popup', '{{ $story->idstory }}', '{{ $story->id }}', '{{ $title }}')">
+					<button class="icn btn btn-circle btn-primary-color" onclick="opPostPopup('open', 'menu-popup', '{{ $story->idstory }}', '{{ $story->id }}')">
 						<span class="fa fa-lg fa-ellipsis-h"></span>
 					</button>
 				</div>

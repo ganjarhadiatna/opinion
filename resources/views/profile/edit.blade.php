@@ -141,7 +141,7 @@
 						<div class="place-edit">
 							<div class="pe-2 pe-btn">
 								<input type="button" name="edit-save" class="btn btn-primary-color" value="Cancel" onclick="goBack()">
-								<input type="submit" name="edit-save" class="btn btn-main-color" value="Save Edit">
+								<input type="submit" name="edit-save" class="btn btn-main-color" value="Save">
 							</div>
 						</div>
 					</div>

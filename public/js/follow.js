@@ -2,7 +2,7 @@ function opFollow(iduser, server, idmain) {
 	if (idmain === '') {
 		opAlert('open', 'Please login berfore you can Follow this user.');
 	} else {
-		var tr = $('#add-follow-'+iduser).val();
+		var tr = $('.add-follow-'+iduser).val();
 		if (tr === 'Follow') {
 			addFollow(iduser, server);
 		} else {
@@ -16,19 +16,19 @@ function addFollow(iduser, server) {
 		type: 'post',
 		data: {'iduser': iduser},
 		beforeSend: function() {
-			$('#add-follow-'+iduser).val('Wait..');
+			$('.add-follow-'+iduser).val('Wait..');
 		}
 	})
 	.done(function(data) {
 		if (data === 'success') {
-			$('#add-follow-'+iduser).val('Unfollow').attr('class', 'btn btn-main3-color');
+			$('.add-follow-'+iduser).val('Unfollow').attr('class', 'btn btn-main3-color add-follow-'+iduser);
 		} else {
-			$('#add-follow-'+iduser).val('Follow').attr('class', 'btn btn-sekunder-color');
+			$('.add-follow-'+iduser).val('Follow').attr('class', 'btn btn-sekunder-color add-follow-'+iduser);
 			opAlert('open', 'Failed to Follow this user.');
 		}
 	})
 	.fail(function() {
-		$('#add-follow-'+iduser).val('Follow').attr('class', 'btn btn-sekunder-color');
+		$('.add-follow-'+iduser).val('Follow').attr('class', 'btn btn-sekunder-color add-follow-'+iduser);
 		opAlert('open', 'There is an error, please try again.');
 	});
 	
@@ -39,19 +39,19 @@ function removeFollow(iduser, server) {
 		type: 'post',
 		data: {'iduser': iduser},
 		beforeSend: function() {
-			$('#add-follow-'+iduser).val('Wait..');
+			$('.add-follow-'+iduser).val('Wait..');
 		}
 	})
 	.done(function(data) {
 		if (data === 'success') {
-			$('#add-follow-'+iduser).val('Follow').attr('class', 'btn btn-sekunder-color');
+			$('.add-follow-'+iduser).val('Follow').attr('class', 'btn btn-sekunder-color add-follow-'+iduser);
 		} else {
-			$('#add-follow-'+iduser).val('Unfollow').attr('class', 'btn btn-main3-color');
+			$('.add-follow-'+iduser).val('Unfollow').attr('class', 'btn btn-main3-color add-follow-'+iduser);
 			opAlert('open', 'Failed to Unfollow this user.');
 		}
 	})
 	.fail(function() {
-		$('#add-follow-'+iduser).val('Unfollow').attr('class', 'btn btn-main3-color');
+		$('.add-follow-'+iduser).val('Unfollow').attr('class', 'btn btn-main3-color add-follow-'+iduser);
 		opAlert('open', 'There is an error, please try again.');
 	});
 }

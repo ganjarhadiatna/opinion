@@ -2,43 +2,31 @@
 @section('title',$title)
 @section('path', $path)
 @section('content')
-<div class="sc-header bdr-bottom-mobile">
-	<div class="sc-place pos-fix">
-		<div class="col-full">
-			<div class="sc-grid sc-grid-1x">
-				<div class="sc-col-2">
-					<h2 class="ttl-head ttl-sekunder-color">{{ $ttl_followers }} Followers</h2>
+<div class="col-1000px">
+	<div class="post-home post-grid post-grid-2x">
+		<div class="lef post-grid-1" id="home-main-object">
+			<div class="place-notif">
+				<div class="ttl-head padding-15px">
+					<div class="ctn-main-font ctn-min-color ctn-16px">
+						{{ $ttl_followers }} followers
+					</div>
+				</div>
+				<div class="place-follow">
+					@if (count($profile) == 0)
+						<div class="frame-empty">
+							<div class="icn fa fa-lg fa-thermometer-empty btn-main-color"></div>
+							<div class="ctn-main-font ctn-sek-color ctn-small padding-15px">Followers Empty</div>
+						</div>
+					@else
+						@foreach ($profile as $p)
+							@include('main.frame-follow')
+						@endforeach
+					@endif
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
-<div class="frame-home">
-	<div class="place-follow">
-		<div>
-			@foreach ($profile as $p)
-				<div class="frame-follow">
-					<div class="ff-top top">
-						<a href="{{ url('/user/'.$p->id) }}">
-							<div class="image image-35px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$p->foto) }});"></div>
-						</a>
-					</div>
-					<div class="ff-mid mid">
-						<div class="fl-ttl">
-							<a href="{{ url('/user/'.$p->id) }}">{{ $p->username }}</a>
-						</div>
-					</div>
-					<div class="ff-bot bot">
-						@if (Auth::id() != $p->id)
-							@if (is_int($p->is_following))
-								<input type="button" name="follow" class="btn btn-main3-color" id="add-follow-{{ $p->id }}" value="Unfollow" onclick="opFollow('{{ $p->id }}', '{{ url("/") }}', '{{ Auth::id() }}')">
-							@else
-								<input type="button" name="follow" class="btn btn-sekunder-color" id="add-follow-{{ $p->id }}" value="Follow" onclick="opFollow('{{ $p->id }}', '{{ url("/") }}', '{{ Auth::id() }}')">
-							@endif
-						@endif
-					</div>
-				</div>
-			@endforeach
+		<div class="rig post-grid-2">
+			@include('main.side-menu')
 		</div>
 	</div>
 </div>

@@ -336,15 +336,17 @@
 					@endif
 					<div class="pos bot bdr-bottom">
 						<div class="ctn-main-font ctn-14px ctn-sek-color ctn-bold padding-bottom-15px">
-							People Response
+							Response
 						</div>
 						<div class="comment-content" id="place-comment"></div>
 						<div class="frame-more" id="frame-more-comment">
-							<input type="hidden" name="offset" id="offset-comment" value="0">
-							<input type="hidden" name="limit" id="limit-comment" value="0">
-							<button class="btn btn-sekunder-color btn-radius" id="load-more-comment">
-								<span class="Load More Comment">Load More</span>
-							</button>
+							<div class="padding-top-15px">
+								<input type="hidden" name="offset" id="offset-comment" value="0">
+								<input type="hidden" name="limit" id="limit-comment" value="0">
+								<button class="btn btn-sekunder-color btn-radius" id="load-more-comment">
+									<span class="Load More Comment">Load More</span>
+								</button>
+							</div>
 						</div>
 						<div class="padding-bottom-15px"></div>
 					</div>

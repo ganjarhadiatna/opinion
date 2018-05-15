@@ -414,7 +414,7 @@
 
 .place-follow {
 	position: relative;
-	width: 600px;
+	width: calc(100% - 30px);
 	margin: auto;
 	padding: 15px;
 	background-color: #fff;

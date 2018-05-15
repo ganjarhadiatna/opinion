@@ -17,9 +17,14 @@
 											<div class="image image-35px image-circle" style="background-image: url({{ asset('/profile/thumbnails/'.$dt->foto) }});"></div>
 										</div>
 										<div class="grid-2">
-											<div class="main-ttl">
+											<div class="main-ttl ctn-main-font ctn-min-color ctn-desc">
 												Create Your Opinion
 											</div>
+										</div>
+										<div class="grid-3">
+											<button class="icn btn btn-circle btn-primary-color">
+												<span class="fa fa-lg fa-arrow-right"></span>
+											</button>
 										</div>
 									</div>
 								</div>

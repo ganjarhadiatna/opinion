@@ -348,14 +348,6 @@
 		@include column_2();
 		.fl-ttl {
 			@include post-top;
-			font-size: 14px;
-			font-weight: 600;
-			a {
-				color: $txt-min-color;
-				&:hover {
-					color: $min-color;
-				}
-			}
 		}
 	}
 	.ff-bot {

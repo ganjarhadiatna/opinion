@@ -61,7 +61,7 @@
 												<input 
 													type="button" 
 													name="edit" 
-													class="btn btn-sekunder-color" 
+													class="btn btn-sekunder-color add-follow-{{ $p->id }}" 
 													id="add-follow-{{ $p->id }}" 
 													value="Follow" 
 													onclick="opFollow('{{ $p->id }}', '{{ url("/") }}', '{{ Auth::id() }}')">
@@ -69,7 +69,7 @@
 												<input 
 													type="button" 
 													name="edit" 
-													class="btn btn-main3-color" 
+													class="btn btn-main3-color add-follow-{{ $p->id }}" 
 													id="add-follow-{{ $p->id }}" 
 													value="Unfollow" 
 													onclick="opFollow('{{ $p->id }}', '{{ url("/") }}', '{{ Auth::id() }}')">
@@ -87,7 +87,7 @@
 					<div class="profile">
 						<div class="foto">
 							<div 
-								class="image image-150px image-circle" 
+								class="image image-130px image-circle" 
 								id="place-picture" 
 								style="background-image: url({{ asset('/profile/thumbnails/'.$p->foto) }});"></div>
 						</div>
@@ -102,23 +102,21 @@
 							<div class="other">
 								<a class="link" href="{{ $p->website }}" target="_blank">{{ $p->website }}</a>
 							</div>
-							<div>
-								<div class="other mrg-bottom">
-									<ul>
-										<li>
-											<a href="{{ url('/user/'.$p->id.'/following') }}">
-												<div class="val">{{ $p->ttl_following }}</div>
-												<div class="ttl">Following</div>
-											</a>
-										</li>
-										<li>
-											<a href="{{ url('/user/'.$p->id.'/followers') }}">
-												<div class="val">{{ $p->ttl_followers }}</div>
-												<div class="ttl">Followers</div>
-											</a>
-										</li>
-									</ul>
-								</div>
+							<div class="other mrg-bottom">
+								<ul>
+									<li>
+										<a href="{{ url('/user/'.$p->id.'/following') }}">
+											<span class="val">{{ $p->ttl_following }}</span>
+											<span class="ttl">Following</span>
+										</a>
+									</li>
+									<li>
+										<a href="{{ url('/user/'.$p->id.'/followers') }}">
+											<span class="val">{{ $p->ttl_followers }}</span>
+											<span class="ttl">Followers</span>
+										</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 					</div>

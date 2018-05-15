@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Auth;
 
 use App\FollowModel;
 use App\NotifModel;
+use App\ProfileModel;
+use App\TagModel;
 
 class FollowController extends Controller
 {
@@ -19,11 +21,15 @@ class FollowController extends Controller
         }
         $profile = FollowModel::GetUserFollowing($iduser, $id);
         $ttl_following = FollowModel::GetTotalFollowing($iduser);
+        $topUsers = ProfileModel::TopUsers($id, 10);
+        $topTags = TagModel::TopTags(10);
         return view('profile.following', [
             'title' => 'Following',
             'path' => 'profile',
             'profile' => $profile,
-            'ttl_following' => $ttl_following
+            'ttl_following' => $ttl_following,
+            'topTags' => $topTags,
+            'topUsers' => $topUsers
         ]);
     }
     function followers($iduser)
@@ -35,12 +41,16 @@ class FollowController extends Controller
         }
         $profile = FollowModel::GetUserFollowers($iduser, $id);
         $ttl_followers = FollowModel::GetTotalFollowers($iduser);
+        $topUsers = ProfileModel::TopUsers($id, 10);
+        $topTags = TagModel::TopTags(10);
         return view(
             'profile.followers', [
             'title' => 'Followers',
             'path' => 'profile',
             'profile' => $profile,
-            'ttl_followers' => $ttl_followers
+            'ttl_followers' => $ttl_followers,
+            'topTags' => $topTags,
+            'topUsers' => $topUsers
         ]);
     }
     function add(Request $request)
