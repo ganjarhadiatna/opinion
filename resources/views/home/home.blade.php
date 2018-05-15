@@ -28,7 +28,7 @@
 		<div class="logo" style="background-image: url('{{ asset('/img/6.png') }}')"></div>
 		-->
 		<div class="ttl ctn-main-font ctn-small ctn-center padding-10px">
-			You Have New World Now.
+			A Place to Share Your Opinions.
 		</div>
 	</div>
 	<div class="block theme-1">

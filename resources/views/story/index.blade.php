@@ -269,8 +269,10 @@
 								<li>{{ $story->ttl_comment.' Comments' }}</li>
 								<li><span class="icn fa fa-1x fa-circle"></span></li>
 								<li>{{ $story->ttl_love.' Agree' }}</li>
-								<li><span class="icn fa fa-1x fa-circle"></span></li>
-								<li>{{ $story->ttl_save.' Saves' }}</li>
+								@if ($story->id == Auth::id())
+									<li><span class="icn fa fa-1x fa-circle"></span></li>
+									<li>{{ $story->ttl_save.' Saves' }}</li>
+								@endif
 								<li><span class="icn fa fa-1x fa-circle"></span></li>
 								<li>{{ $story->ttl_image.' Images' }}</li>
 								<li><span class="icn fa fa-1x fa-circle"></span></li>

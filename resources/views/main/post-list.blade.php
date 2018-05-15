@@ -16,8 +16,12 @@
 					<li>{{ $story->ttl_comment.' Comments' }}</li>
 					<li><span class="icn fa fa-1x fa-circle"></span></li>
 					<li>{{ $story->ttl_love.' Agree' }}</li>
+					@if ($story->id == Auth::id())
+						<li><span class="icn fa fa-1x fa-circle"></span></li>
+						<li>{{ $story->ttl_save.' Saves' }}</li>
+					@endif
 					<li><span class="icn fa fa-1x fa-circle"></span></li>
-					<li>{{ $story->ttl_save.' Saves' }}</li>
+					<li>{{ $story->ttl_image.' Images' }}</li>
 					<li><span class="icn fa fa-1x fa-circle"></span></li>
 					<li>{{ date('F d, Y h:i:sa', strtotime($story->created)) }}</li>
 				</ul>

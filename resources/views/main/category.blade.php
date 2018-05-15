@@ -13,14 +13,14 @@
 			<div class="place-notif">
 				<div class="ttl-head padding-15px">
 					<div class="ctn-main-font ctn-min-color ctn-16px">
-						Categories
+						Explore
 					</div>
 				</div>
 				<div class="ctr">
 					<ul>
 						<li>
 							<a href="{{ url('/') }}" class="ctn-main-font ctn-sek-color ctn-14px">
-								Home Feeds
+								Timelines
 							</a>
 						</li>
 						<li>
@@ -38,6 +38,17 @@
 								Trending
 							</a>
 						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="place-notif">
+				<div class="ttl-head padding-15px">
+					<div class="ctn-main-font ctn-min-color ctn-16px">
+						Collections
+					</div>
+				</div>
+				<div class="ctr">
+					<ul>
 						@foreach ($allTags as $tag)
 							<?php 
 								$replace = array('[',']','@',',','.','#','+','-','*','<','>','-','(',')',';','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');

@@ -649,7 +649,7 @@
 	padding: 15px;
 	.profile {
 		position: relative;
-		@include grid_2x(165px, 1fr);
+		@include grid_2x(140px, 1fr);
 		@media (max-width: $max-width) {
 			@include grid_none();
 		}

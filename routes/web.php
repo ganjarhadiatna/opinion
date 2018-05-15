@@ -17,6 +17,7 @@ Route::get('/home', 'MainController@index');
 Route::get('/tags/{ctr}', 'MainController@tagsId');
 Route::get('/category/{ctr}', 'MainController@ctrId');
 Route::get('/categories', 'MainController@ctr');
+Route::get('/explore', 'MainController@ctr');
 Route::get('/popular', 'MainController@popular');
 Route::get('/fresh', 'MainController@fresh');
 Route::get('/trending', 'MainController@trending');

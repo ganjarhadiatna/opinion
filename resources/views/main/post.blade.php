@@ -35,28 +35,34 @@
 			<div class="mid-tool padding-bottom-15px">
 				<div class="cover"></div>
 				@if ($story->ttl_image == 1)
+				<a href="{{ url('/story/'.$story->idstory) }}">
 					<div class="cover-theme cover-theme-1">
 						<div class="image image-all image-radius"
 						style="background-image: url({{ asset('/story/thumbnails/'.$story->cover1) }});"></div>
 					</div>
+				</a>
 				@elseif ($story->ttl_image <= 4)
+				<a href="{{ url('/story/'.$story->idstory) }}">
 					<div class="cover-theme cover-theme-2">
 						<div class="image image-full"
 						style="background-image: url({{ asset('/story/thumbnails/'.$story->cover1) }});"></div>
 						<div class="image image-full"
 						style="background-image: url({{ asset('/story/thumbnails/'.$story->cover2) }});"></div>
 					</div>
+				</a>
 				@else
+				<a href="{{ url('/story/'.$story->idstory) }}">
 					<div class="cover-theme cover-theme-2">
-						<div class="image image-full"
+						<div class="image image-all"
 						style="background-image: url({{ asset('/story/thumbnails/'.$story->cover1) }});"></div>
-						<div class="image image-full"
+						<div class="image image-all"
 						style="background-image: url({{ asset('/story/thumbnails/'.$story->cover2) }});"></div>
-						<div class="image image-full"
+						<div class="image image-all"
 						style="background-image: url({{ asset('/story/thumbnails/'.$story->cover3) }});"></div>
-						<div class="image image-full"
+						<div class="image image-all"
 						style="background-image: url({{ asset('/story/thumbnails/'.$story->cover4) }});"></div>
 					</div>
+				</a>
 				@endif
 				@if ($story->ttl_image > 1)
 					<div class="icn-image">
@@ -72,8 +78,10 @@
 					<li>{{ $story->ttl_comment.' Comments' }}</li>
 					<li><span class="icn fa fa-1x fa-circle"></span></li>
 					<li>{{ $story->ttl_love.' Agree' }}</li>
-					<li><span class="icn fa fa-1x fa-circle"></span></li>
-					<li>{{ $story->ttl_save.' Saves' }}</li>
+					@if ($story->id == Auth::id())
+						<li><span class="icn fa fa-1x fa-circle"></span></li>
+						<li>{{ $story->ttl_save.' Saves' }}</li>
+					@endif
 					<li><span class="icn fa fa-1x fa-circle"></span></li>
 					<li>{{ date('F d, Y h:i:sa', strtotime($story->created)) }}</li>
 				</ul>

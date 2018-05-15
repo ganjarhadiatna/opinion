@@ -65,6 +65,13 @@
 			border: 0 #fff solid;
 		}
 	}
+	&.btn-black-color {
+		background-color: rgba(0,0,0,0.54);
+		color: $sek-color;
+		&:hover {
+			background-color: rgba(0,0,0,0.84);
+		}
+	}
 	&.btn-primary-color {
 		@include rgba_black(0, #999);
 	}

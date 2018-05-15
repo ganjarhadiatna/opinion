@@ -85,7 +85,13 @@
 								<div class="grid-3 txt-right">
 									<a href="{{ url('/story/'.$dt->idstory) }}">
 										<div class="image image-40px image-radius">
-											<span class="icn fas fa-lg fa-lightbulb"></span>
+											@if ($dt->type == 'comment')
+												<span class="icn far fa-lg fa-comment"></span>
+											@elseif ($dt->type == 'love')
+												<span class="icn far fa-lg fa-thumbs-up"></span>
+											@else
+												<span class="icn fas fa-lg fa-bookmark"></span>
+											@endif
 										</div>
 									</a>
 								</div>

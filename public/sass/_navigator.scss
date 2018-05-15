@@ -197,6 +197,9 @@
 		white-space: nowrap;
 		overflow: hidden;
 		@include column_2();
+		@media (max-width: $max-width) {
+			overflow-x: auto;
+		}
 		.image {
 			display: inline-block;
 			margin: 0 2.5px;

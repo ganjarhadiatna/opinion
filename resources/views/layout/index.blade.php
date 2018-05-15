@@ -249,10 +249,10 @@
 					<a href="{{ url('/') }}">
 						<button class="btn-icn btn btn-main2-color btn-radius" id="home">
 							<span class="fas fa-lg fa-home"></span>
-							<span class="mobile ctn-main-font ctn-sek-color ctn-14px">Home</span>
+							<span class="mobile ctn-main-font ctn-sek-color ctn-14px">Timelines</span>
 						</button>
 					</a>
-					<a href="{{ url('/categories') }}">
+					<a href="{{ url('/explore') }}">
 						<button class="btn-icn btn btn-main2-color" id="category" key="hide">
 							<span class="fas fa-lg fa-bolt"></span>
 							<span class="mobile ctn-main-font ctn-sek-color ctn-14px">Explore</span>
@@ -304,7 +304,7 @@
 			</div>
 		</div>
 		<div class="zoom-pict" id="zoom-pict">
-			<button class="close btn btn-circle btn-main2-color" id="close-zoom">
+			<button class="close btn btn-circle btn-black-color" id="close-zoom">
 				<span class="fas fa-lg fa-times"></span>
 			</button>
 			<div class="zp-main"></div>

@@ -85,9 +85,9 @@
 				<div class="frame-profile">
 				@foreach ($profile as $p)
 					<div class="profile">
-						<div class="foto">
+						<div class="foto padding-bottom-10px">
 							<div 
-								class="image image-130px image-circle" 
+								class="image image-120px image-circle" 
 								id="place-picture" 
 								style="background-image: url({{ asset('/profile/thumbnails/'.$p->foto) }});"></div>
 						</div>

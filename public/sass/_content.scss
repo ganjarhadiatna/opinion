@@ -2,17 +2,16 @@
 .zoom-pict {
 	@include post_fixed();
 	overflow-y: auto;
+	overflow-x: hidden;
 	display: none;
 	.close {
 		position: absolute;
 		top: 10px;
 		right: 10px;
+		z-index: 10;
 	}
 	.zp-main {
-		position: relative;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
+		@include post_center_relative();
 		max-width: calc(100vh - 20px);
 		max-height: calc(100vh - 20px);
 		text-align: center;

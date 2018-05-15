@@ -124,12 +124,14 @@
 			contentType: false,
 			type: 'post',
 			beforeSend: function() {
-				open_progress('Updating your Story...');
+				open_progress('Updating your opinion...');
 			}
 		})
 		.done(function(data) {
 		   	if (data === 'failed') {
-		   		opAlert('open', 'failed to saving story, your story still the same with previous content. To fix problem try with edit content story.');
+		   		opAlert('open', 'failed to saving opinion, \
+				   your opinion still the same with previous content. \
+				   To fix problem try with edit to content opinion or ignore it.');
 		   		close_progress();
 		   	} else {
 				$('#title-story').val('');

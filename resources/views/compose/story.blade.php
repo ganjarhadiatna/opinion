@@ -142,14 +142,14 @@
 			contentType: false,
 			type: 'post',
 			beforeSend: function() {
-				open_progress('Uploading your Story...');
+				open_progress('Uploading your opinion...');
 			}
 		})
 		.done(function(data) {
 		   	if (data == 'failed') {
-		   		opAlert('open', 'failed to publish story.');
+		   		opAlert('open', 'failed to publish opinion.');
 		   	} else if (data == 'no-login') {
-		   		opAlert('open', 'you must login berfore can publish story.');
+		   		opAlert('open', 'you must login berfore can publish opinion.');
 		   	} else if (data == 'no-file') {
 		   		opAlert('open', 'you must select files.');
 		   	} else {
