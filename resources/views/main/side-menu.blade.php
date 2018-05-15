@@ -1,8 +1,15 @@
+<?php use App\TagModel; ?>
+<?php use App\ProfileModel; ?>
+<?php if (Auth::id()) { $id = Auth::id(); } else { $id = 0; } ?>
 <div id="home-side-object">
-	<div class="frame-other">
-		<strong class="ttl">Create your Opinion</strong>
-		<p>Let's start to post your opinion. It's easy to use and that's all free for you...</p>
-		<div class="padding-10px">
+	<div class="place-notif">
+		<div class="place-notif-ctn">
+			<div class="ctn-main-font ctn-min-color ctn-16px padding-bottom-10px">
+				<strong class="ttl">Create your Opinion</strong>
+			</div>
+			<div class="ctn-main-font ctn-sek-color ctn-14px padding-bottom-15px">
+				<p>Let's start to post your opinion. It's easy to use and that's all free for you...</p>
+			</div>
 			<a href="{{ url('/compose') }}">
 				<button class="create btn btn-main3-color width-all" onclick="opCompose('open');">
 					<span class="fas fa-lg fa-plus"></span>
@@ -11,34 +18,42 @@
 			</a>
 		</div>
 	</div>
-	<div class="padding-bottom-15px"></div>
-	<div class="frame-other">
-		<strong class="ttl">Who to Follows</strong>
-		@foreach($topUsers as $p)
-			@include('main.frame-follow')
-		@endforeach
-	</div>
-	<div class="padding-bottom-15px"></div>
-	<div class="frame-other">
-		<strong class="ttl">Tranding Nows</strong>
-		<div>
-        @foreach($topTags as $tag)
-			<?php 
-				$replace = array('[',']','@',',','.','#','+','-','*','<','>','-','(',')',';','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
-				$title = str_replace($replace, '', $tag->tag); 
-			?>
-			<div class="frame-trending">
-				<div class="ttl-head">
-					<a href="{{ url('/tags/'.$title) }}">
-                        {{ $tag->tag }}
-					</a>
-				</div>
-				<div class="ttl-ctn">{{ $tag->ttl_tag }} Stories</div>
+	<div class="place-notif">
+		<div class="ttl-head padding-15px">
+			<div class="ctn-main-font ctn-min-color ctn-16px">
+				Who's to follows
 			</div>
-        @endforeach
+		</div>
+		<div class="place-notif-ctn">
+			@foreach(ProfileModel::TopUsers($id, 10) as $p)
+				@include('main.frame-follow')
+			@endforeach
 		</div>
 	</div>
-	<div id="footer">
+	<div class="place-notif">
+		<div class="ttl-head padding-15px">
+			<div class="ctn-main-font ctn-min-color ctn-16px">
+				Tranding now's
+			</div>
+		</div>
+		<div class="place-notif-ctn">
+			@foreach(TagModel::TopTags(10) as $tag)
+				<?php 
+					$replace = array('[',']','@',',','.','#','+','-','*','<','>','-','(',')',';','&','%','$','!','`','~','=','{','}','/',':','?','"',"'",'^');
+					$title = str_replace($replace, '', $tag->tag); 
+				?>
+				<div class="frame-trending">
+					<div>
+						<a href="{{ url('/tags/'.$title) }}" class="ctn-main-font ctn-reg-color ctn-link ctn-desc ctn-hover-underline">
+							{{ $tag->tag }}
+						</a>
+					</div>
+					<div class="ctn-main-font ctn-sek-color ctn-link ctn-14px ctn-thin">{{ $tag->ttl_tag }} Stories</div>
+				</div>
+			@endforeach
+		</div>
+	</div>
+	<div id="footer" class="padding-bottom-15px">
 		<ul>
 			<li>
 				<a href="{{ url('/') }}">Home Feeds</a>

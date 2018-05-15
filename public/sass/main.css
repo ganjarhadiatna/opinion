@@ -1268,6 +1268,12 @@
       .place-notif .ctr ul li a:hover {
         background-color: rgba(0, 0, 0, 0.1);
         color: rgba(0, 0, 0, 0.84); }
+  .place-notif .place-notif-ctn {
+    position: relative;
+    width: calc(100% - 30px);
+    padding: 15px; }
+    .place-notif .place-notif-ctn .create {
+      width: 100%; }
 
 .add-menu {
   position: absolute;
@@ -2097,12 +2103,16 @@ a {
     text-transform: normal; }
   .ctn-main-font.ctn-center {
     text-align: center; }
+  .ctn-main-font.ctn-reg-color {
+    color: #529ecc; }
   .ctn-main-font.ctn-sek-color {
     color: rgba(0, 0, 0, 0.54); }
   .ctn-main-font.ctn-min-color {
     color: rgba(0, 0, 0, 0.84); }
   .ctn-main-font.ctn-link:hover {
     color: #529ecc; }
+  .ctn-main-font.ctn-hover-underline:hover {
+    text-decoration: underline; }
   .ctn-main-font.ctn-white-color {
     color: #fff; }
   .ctn-main-font.ctn-line {
@@ -2369,8 +2379,7 @@ a {
 /*footer*/
 #footer {
   position: relative;
-  width: calc(100%);
-  padding: 15px 0;
+  width: 100%;
   cursor: default; }
   #footer ul li {
     list-style: none;

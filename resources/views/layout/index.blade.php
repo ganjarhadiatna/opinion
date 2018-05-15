@@ -254,7 +254,7 @@
 					</a>
 					<a href="{{ url('/categories') }}">
 						<button class="btn-icn btn btn-main2-color" id="category" key="hide">
-							<span class="fas fa-lg fa-search"></span>
+							<span class="fas fa-lg fa-bolt"></span>
 							<span class="mobile ctn-main-font ctn-sek-color ctn-14px">Explore</span>
 						</button>
 					</a>

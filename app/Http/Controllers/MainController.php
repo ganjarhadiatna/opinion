@@ -20,14 +20,10 @@ class MainController extends Controller
             $id = Auth::id();
             $profile = FollowModel::GetAllFollowing($id);
             $topStory = StoryModel::PagTimelinesStory(20, $profile, $id);
-            $topUsers = ProfileModel::TopUsers($id, 10);
-            $topTags = TagModel::TopTags(10);
             return view('home.index', [
                 'title' => 'Official Site',
                 'path' => 'home',
-                'topStory' => $topStory,
-                'topTags' => $topTags,
-                'topUsers' => $topUsers
+                'topStory' => $topStory
             ]);
         } else {
             return view('home.home', [
@@ -68,14 +64,10 @@ class MainController extends Controller
             $id = 0;
         }
         $topStory = StoryModel::PagTagStory($ctr, 20);
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('others.index', [
             'title' => $ctr,
             'path' => 'category',
-            'topStory' => $topStory,
-            'topTags' => $topTags,
-            'topUsers' => $topUsers
+            'topStory' => $topStory
         ]);
     }
     function ctrId($ctr)
@@ -86,14 +78,10 @@ class MainController extends Controller
             $id = 0;
         }
         $topStory = StoryModel::PagCtrStory($ctr, 20);
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('others.index', [
             'title' => 'Category',
             'path' => 'category',
-            'topStory' => $topStory,
-            'topTags' => $topTags,
-            'topUsers' => $topUsers
+            'topStory' => $topStory
         ]);
     }
     function ctr()
@@ -133,14 +121,10 @@ class MainController extends Controller
             $id = 0;
         }
         $topStory = StoryModel::PagPopularStory(20);
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('others.index', [
             'title' => 'Popular',
             'path' => 'category',
-            'topStory' => $topStory,
-            'topTags' => $topTags,
-            'topUsers' => $topUsers
+            'topStory' => $topStory
         ]);
     }
     function fresh()
@@ -151,14 +135,10 @@ class MainController extends Controller
             $id = 0;
         }
         $topStory = StoryModel::PagAllStory(20);
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('others.index', [
             'title' => 'Fresh',
             'path' => 'category',
-            'topStory' => $topStory,
-            'topTags' => $topTags,
-            'topUsers' => $topUsers
+            'topStory' => $topStory
         ]);
     }
     function trending()
@@ -169,14 +149,10 @@ class MainController extends Controller
             $id = 0;
         }
         $topStory = StoryModel::PagTrendingStory(20);
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('others.index', [
             'title' => 'Trending',
             'path' => 'category',
-            'topStory' => $topStory,
-            'topTags' => $topTags,
-            'topUsers' => $topUsers
+            'topStory' => $topStory
         ]);
     }
     function search($ctr)
@@ -223,13 +199,9 @@ class MainController extends Controller
         } else {
             $id = 0;
         }
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('compose.story', [
             'title' => 'New Story',
-            'path' => 'compose',
-            'topUsers' => $topUsers,
-            'topTags' => $topTags
+            'path' => 'compose'
         ]);
     }
     function login()

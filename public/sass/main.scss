@@ -97,6 +97,9 @@ a {
 	&.ctn-center {
 		text-align: center;
 	}
+	&.ctn-reg-color {
+		color: $min-color;
+	}
 	&.ctn-sek-color {
 		color: $txt-sek-color;
 	}
@@ -106,6 +109,11 @@ a {
 	&.ctn-link {
 		&:hover {
 			color: $min-color;
+		}
+	}
+	&.ctn-hover-underline  {
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 	&.ctn-white-color {
@@ -376,8 +384,7 @@ a {
 /*footer*/
 #footer {
 	position: relative;
-	width: calc(100%);
-	padding: 15px 0;
+	width: 100%;
 	cursor: default;
 	ul {
 		li {

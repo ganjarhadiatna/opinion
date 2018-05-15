@@ -19,16 +19,12 @@ class ProfileController extends Controller
         $id = Auth::id();
         $profile = ProfileModel::UserData($id);
         $userStory = StoryModel::PagUserStory(20, $id);
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('profile.index', [
             'title' => 'User Profile',
             'path' => 'profile',
             'nav' => 'story',
             'profile' => $profile,
-            'userStory' => $userStory,
-            'topTags' => $topTags,
-            'topUsers' => $topUsers
+            'userStory' => $userStory
         ]);
     }
 	function story($id)
@@ -42,17 +38,13 @@ class ProfileController extends Controller
         $profile = ProfileModel::UserData($id);
         $userStory = StoryModel::PagUserStory(20, $id);
         $statusFolow = FollowModel::Check($id, $iduser);
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('profile.index', [
             'title' => 'User Profile',
             'path' => $pathProfile,
             'nav' => 'story',
             'profile' => $profile,
             'userStory' => $userStory,
-            'statusFolow' => $statusFolow,
-            'topTags' => $topTags,
-            'topUsers' => $topUsers
+            'statusFolow' => $statusFolow
         ]);
 	}
 	function save()
@@ -60,16 +52,12 @@ class ProfileController extends Controller
 		$id = Auth::id();
         $profile = ProfileModel::UserData($id);
         $userStory = StoryModel::PagUserBookmark(20, $id);
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('profile.index', [
             'title' => 'User Profile',
             'path' => 'Profile',
             'nav' => 'bookmark',
             'profile' => $profile,
-            'userStory' => $userStory,
-            'topTags' => $topTags,
-            'topUsers' => $topUsers
+            'userStory' => $userStory
         ]);
 	}
 	function profileSetting()

@@ -36,8 +36,6 @@ class StoryController extends Controller
         $statusFolow = FollowModel::Check($iduser, $iduserMe);
         $check = BookmarkModel::Check($idstory, $iduserMe);
         $images = ImageModel::GetAllImage($idstory);
-        $topUsers = ProfileModel::TopUsers($id, 10);
-        $topTags = TagModel::TopTags(10);
         return view('story.index', [
             'title' => 'Story',
             'path' => 'none',
@@ -46,9 +44,7 @@ class StoryController extends Controller
             'tags' => $tags,
             'check' => $check,
             'statusFolow' => $statusFolow,
-            'images' => $images,
-            'topTags' => $topTags,
-            'topUsers' => $topUsers
+            'images' => $images
         ]);
     }
     function storyEdit($idstory, $iduser, $token)

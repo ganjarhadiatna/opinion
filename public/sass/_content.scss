@@ -130,6 +130,14 @@
 			}
 		}
 	}
+	.place-notif-ctn {
+		position: relative;
+		width: calc(100% - 30px);
+		padding: 15px;
+		.create {
+			width: 100%;
+		}
+	}
 }
 
 .add-menu {
