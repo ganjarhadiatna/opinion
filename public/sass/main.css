@@ -136,7 +136,7 @@
   font-size: 15px;
   font-weight: 900;
   padding: 0 15px;
-  border-radius: 5px; }
+  border-radius: 45px; }
   .txt.txt-no-shadow {
     box-shadow: 0 0 0 0 transparent; }
   .txt.txt-radius {
@@ -1409,7 +1409,7 @@
       .compose .main .create-body .create-block .txt-main-color:focus {
         border: 1px rgba(0, 0, 0, 0.54) solid; }
       .compose .main .create-body .create-block #write-story {
-        min-height: 30px; }
+        min-height: 80px; }
       .compose .main .create-body .create-block .loading {
         display: none; }
       .compose .main .create-body .create-block .block-field {
