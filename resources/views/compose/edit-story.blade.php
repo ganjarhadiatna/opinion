@@ -107,7 +107,7 @@
 	function publish() {
 		var fd = new FormData();
 		var idstory = $('#id-story').val();
-		var content = $('#write-story').val();
+		var content = $('#write-story').text();
 		var tags = $('#tags-story').val();
 
 		fd.append('idstory', idstory);
@@ -132,19 +132,19 @@
 		   		opAlert('open', 'failed to saving opinion, \
 				   your opinion still the same with previous content. \
 				   To fix problem try with edit to content opinion or ignore it.');
-		   		close_progress();
+		   	} else if (data === 'no-text') {
+				opAlert('open', 'please write your opinion.');
 		   	} else {
-				$('#title-story').val('');
-				$('#write-story').val('');
 				opCreateStory('close');
-				close_progress();
 				window.location = '{{ url("/story/") }}'+'/'+data;
 		   	}
 		   	//console.log(data);
 		})
 		.fail(function() {
 		  	opAlert('open', "there is an error, please try again.");
-		   	close_progress();
+		})
+		.always(function () {
+			close_progress();
 		});
 
 		return false;
@@ -154,7 +154,7 @@
 			value: false,
 		});
 		$('#write-story').keyup(function(event) {
-			var length = $(this).val().length;
+			var length = $(this).text().length;
 			$('#desc-lg').html(length);
 			
 		});
@@ -212,7 +212,13 @@
 										</div>
 									</div>
 								</div>
-								<textarea name="write-story" id="write-story" class="txt edit-text txt-main-color txt-box-shadow ctn ctn-main ctn-sans-serif" maxlength="250"><?php echo $story->description; ?></textarea>
+								<div 
+									name="write-story" 
+									id="write-story" 
+									class="txt edit-text txt-main-color txt-box-shadow ctn ctn-main ctn-sans-serif" 
+									placeholder="What are you thingking?"
+									maxlength="250"
+									contenteditable="true"><?php echo $story->description; ?></div>
 							</div>
 							<div class="padding-5px"></div>
 							<div class="block-field">

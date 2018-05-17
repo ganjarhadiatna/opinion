@@ -54,11 +54,11 @@
 			$('#'+path).show();
 			if (id === iduser) {
 				var menu = '\
-				<li onclick="viewPost('+"'"+idstory+"'"+', '+"'"+title+"'"+')">Read Opinion</li>\
-				<li onclick="editPost('+idstory+','+iduser+')">Edit Opinion</li>\
-				<li onclick="opQuestionPost('+idstory+')">Delete Opinion</li>';
+				<li onclick="viewPost('+"'"+idstory+"'"+', '+"'"+title+"'"+')">Read</li>\
+				<li onclick="editPost('+idstory+','+iduser+')">Edit</li>\
+				<li onclick="opQuestionPost('+idstory+')">Delete</li>';
 			} else {
-				var menu = '<li onclick="viewPost('+"'"+idstory+"'"+', '+"'"+title+"'"+')">Read Opinion</li>';
+				var menu = '<li onclick="viewPost('+"'"+idstory+"'"+', '+"'"+title+"'"+')">Read</li>';
 			}
 			$('.content-popup .place-popup #val').html(menu);
 		} else {

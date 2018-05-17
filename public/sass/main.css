@@ -124,6 +124,12 @@
     background-color: #60d3f5;
     color: #fff; }
 
+[contenteditable=true]:empty:not(:focus):before {
+  content: attr(placeholder);
+  display: block;
+  color: rgba(0, 0, 0, 0.54);
+  cursor: text; }
+
 .txt {
   width: calc(100% - 30px);
   height: 45px;
@@ -2199,6 +2205,10 @@ a {
 .bdr-bottom {
   border-bottom: 1px rgba(0, 0, 0, 0.1) solid; }
 
+@media (max-width: 768px) {
+  .mobile {
+    display: none; } }
+
 /*header*/
 #header {
   position: relative;
@@ -2278,9 +2288,6 @@ a {
           float: left;
           background-color: transparent;
           color: rgba(0, 0, 0, 0.54); }
-      @media (max-width: 768px) {
-        #header .place .menu .pos .mobile {
-          display: none; } }
       #header .place .menu .pos .btn .notif-icn {
         display: none; }
       #header .place .menu .pos .create {
@@ -2294,11 +2301,7 @@ a {
         height: 45px;
         overflow: hidden;
         float: right;
-        margin-left: 10px;
-        display: grid;
-        display: -ms-grid;
-        grid-template-columns: 40px 1fr;
-        -ms-grid-columns: 40px 1fr; }
+        margin-left: 10px; }
         @media (max-width: 768px) {
           #header .place .menu .pos .pp {
             position: fixed;
@@ -2317,15 +2320,15 @@ a {
         #header .place .menu .pos .pp .image {
           position: relative;
           display: inline-block;
-          vertical-align: middle;
-          grid-column: 1;
-          -ms-grid-column: 1; }
+          vertical-align: middle; }
         #header .place .menu .pos .pp .username {
           position: relative;
-          top: 10.5px;
           padding: 0 5px;
-          grid-column: 2;
-          -ms-grid-column: 2; }
+          display: inline-block;
+          vertical-align: middle; }
+          @media (max-width: 768px) {
+            #header .place .menu .pos .pp .username {
+              display: none; } }
       #header .place .menu .lef {
         grid-column: 1;
         -ms-grid-column: 1; }

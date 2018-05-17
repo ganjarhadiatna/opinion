@@ -146,6 +146,12 @@ a {
 	@include bdr_bottom();
 }
 
+.mobile {
+	@media (max-width: $max-width) {
+		display: none;
+	}
+}
+
 /*header*/
 #header {
 	position: relative;
@@ -237,11 +243,6 @@ a {
 						color: $txt-sek-color;
 					}
 				}
-				.mobile {
-					@media (max-width: $max-width) {
-						display: none;
-					}
-				}
 				.btn {
 					.notif-icn {
 						display: none;
@@ -260,7 +261,6 @@ a {
 					overflow: hidden;
 					float: right;
 					margin-left: 10px;
-					@include grid_2x(40px, 1fr);
 					@media (max-width: $max-width) {
 						position: fixed;
 						top: 10px;
@@ -281,13 +281,15 @@ a {
 						position: relative;
 						display: inline-block;
 						vertical-align: middle;
-						@include column_1();
 					}
 					.username {
 						position: relative;
-						top: 10.5px;
 						padding: 0 5px;
-						@include column_2();
+						display: inline-block;
+						vertical-align: middle;
+						@media (max-width: $max-width) {
+							display: none;
+						}
 					}
 				}
 			}

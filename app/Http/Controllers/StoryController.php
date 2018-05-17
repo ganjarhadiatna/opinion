@@ -152,7 +152,7 @@ class StoryController extends Controller
                     echo 'failed';
                 }
             } else {
-                echo 'no-file';
+                echo 'no-text';
             }
         } else {
             echo 'no-login';
@@ -168,15 +168,19 @@ class StoryController extends Controller
             'description' => $content
         );
 
-        $rest = StoryModel::UpdateStory($idstory, $data);
-        if ($rest) {
-            //remove tags
-            TagModel::DeleteTags($idstory);
-            //editting tags
-            $this->mentions($request['tags'], $idstory);
-            echo $idstory;
+        if ($content) {
+            $rest = StoryModel::UpdateStory($idstory, $data);
+            if ($rest) {
+                //remove tags
+                TagModel::DeleteTags($idstory);
+                //editting tags
+                $this->mentions($request['tags'], $idstory);
+                echo $idstory;
+            } else {
+                echo "failed";
+            }
         } else {
-            echo "failed";
+            echo 'no-file';
         }
     }
     function deleteStory(Request $request)

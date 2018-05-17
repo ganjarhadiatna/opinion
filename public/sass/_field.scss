@@ -1,3 +1,9 @@
+[contenteditable=true]:empty:not(:focus):before {
+	content: attr(placeholder);
+	display: block;
+	color: $txt-sek-color;
+	cursor: text;
+}
 .txt {
 	width: calc(100% - 30px);
 	height: 45px;

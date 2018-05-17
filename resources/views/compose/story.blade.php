@@ -122,7 +122,7 @@
 	}
 	function publish() {
 		var fd = new FormData();
-		var content = $('#write-story').val();
+		var content = $('#write-story').text();
 		var tags = $('#tags-story').val();
 
 		var ctn = $('#cover')[0].files.length;
@@ -150,8 +150,8 @@
 		   		opAlert('open', 'failed to publish opinion.');
 		   	} else if (data == 'no-login') {
 		   		opAlert('open', 'you must login berfore can publish opinion.');
-		   	} else if (data == 'no-file') {
-		   		opAlert('open', 'you must select files.');
+		   	} else if (data == 'no-text') {
+		   		opAlert('open', 'please write your opinion.');
 		   	} else {
 				window.location = '{{ url("/story/") }}'+'/'+data;
 		   	}
@@ -193,7 +193,7 @@
 			value: false,
 		});
 		$('#write-story').keyup(function(event) {
-			var length = $(this).val().length;
+			var length = $(this).text().length;
 			$('#desc-lg').html(length);
 			
 		});
@@ -248,13 +248,14 @@
 										</div>
 									</div>
 								</div>
-								<textarea 
+								<div 
 									name="write-story" 
 									id="write-story" 
 									class="txt edit-text txt-main-color txt-box-shadow ctn ctn-main ctn-sans-serif" 
 									maxlength="250"
 									required="required"
-									placeholder="What are you thingking?"></textarea>
+									placeholder="What are you thingking?"
+									contenteditable="true"></div>
 							</div>
 
 							<div class="padding-bottom-15px"></div>
