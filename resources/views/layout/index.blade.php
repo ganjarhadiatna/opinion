@@ -249,7 +249,7 @@
 					<a href="{{ url('/') }}">
 						<button class="btn-icn btn btn-main2-color btn-radius" id="home">
 							<span class="fas fa-lg fa-home"></span>
-							<span class="mobile ctn-main-font ctn-sek-color ctn-14px">Timelines</span>
+							<span class="mobile ctn-main-font ctn-sek-color ctn-14px">Feeds</span>
 						</button>
 					</a>
 					<a href="{{ url('/explore') }}">

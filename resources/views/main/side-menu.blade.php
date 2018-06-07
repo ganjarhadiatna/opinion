@@ -1,5 +1,6 @@
 <?php use App\TagModel; ?>
 <?php use App\ProfileModel; ?>
+<?php use App\StoryModel; ?>
 <?php if (Auth::id()) { $id = Auth::id(); } else { $id = 0; } ?>
 <div id="home-side-object">
 	<div class="place-notif">
@@ -50,6 +51,18 @@
 					</div>
 					<div class="ctn-main-font ctn-sek-color ctn-link ctn-14px ctn-thin">{{ $tag->ttl_tag }} Stories</div>
 				</div>
+			@endforeach
+		</div>
+	</div>
+	<div class="place-notif">
+		<div class="ttl-head padding-15px">
+			<div class="ctn-main-font ctn-min-color ctn-16px">
+				Explore Opinions
+			</div>
+		</div>
+		<div>
+			@foreach(StoryModel::PagTrendingStory(3) as $story)
+				@include('main.post-list')
 			@endforeach
 		</div>
 	</div>
