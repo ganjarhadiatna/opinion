@@ -1780,10 +1780,16 @@
 
 .sc-header {
   position: relative;
+  width: 100%;
   cursor: default; }
+  .sc-header.min-height {
+    min-height: 55px; }
+  .sc-header .bg-white {
+    background-color: #fff; }
   .sc-header .sc-place {
     position: relative;
-    width: 100%; }
+    width: 100%;
+    padding: 5px 0; }
     .sc-header .sc-place.sc-pad {
       width: calc(100% - 30px);
       padding: 0 15px; }

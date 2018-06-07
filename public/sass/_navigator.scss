@@ -34,10 +34,18 @@
 
 .sc-header {
 	position: relative;
+	width: 100%;
 	cursor: default;
+	&.min-height {
+		min-height: 55px;
+	}
+	.bg-white {
+		background-color: #fff;
+	}
 	.sc-place {
 		position: relative;
 		width: 100%;
+		padding: 5px 0;
 		&.sc-pad {
 			width: calc(100% - 30px);
 			padding: 0 15px;
